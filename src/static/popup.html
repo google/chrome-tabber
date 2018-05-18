@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+  Copyright 2018 Google LLC
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ the value of this file.
+ -->
+<html>
+  <head>
+    <title>Tabber</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 80%;
+      }
+      div {
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+    <script src="../js/popup_ext.js"></script>
+  </head>
+  <body>
+    <div>
+      <fieldset>
+        <legend>Current Session</legend>
+      <div><span id="diff"></span></div>
+      <div><span id="timestamp"></span></div>
+      <div><button id="restore">Restore my saved tabs</button></div>
+      <div><button id="save">Save the tabs I have now</button></div>
+      <div title="Coming soon!">
+        <button id="merge">Merge my saved tabs with the tabs I have now</button>
+      <div title="Coming soon!">
+        <button id="swap">Swap the tabs I have now with my saved tabs.</button>
+      </div>
+      </div>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset>
+        <legend>Choose when Tabber should save or restore</legend>
+        <span title="Don't do any automatic saves or restores">
+          <input id="manual" type="radio" name="mode"/>Manual</br>
+        </span>
+        <span title="Restore session at startup only (no automatic saves)">
+          <input id="autostart" type="radio" name="mode"/>Startup Only</br>
+        </span>
+        <span title="Restore session at startup and save changes automatically">
+          <input id="autosave" type="radio" name="mode"/>Auto-Save</br>
+        </span>
+        <span title="Automatically keep all browsers in sync">
+          <input id="autosync" type="radio" name="mode"/>Fully Automatic</br>
+        </span>
+      </fieldset>
+      </div>
+      <div align="right">
+        <span title="Enable debugging output to chrome console">
+        Debug mode<input id="debug_mode" type="checkbox" name="vehicle"/></br>
+      </div>
+  </body>
+</html>
+
